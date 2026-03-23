@@ -3,6 +3,6 @@ const app = require("./app");
 
 const server = http.createServer(app);
 
-server.listen(3007, () => {
-    console.log("Express rodando na rota 3007...")
+server.listen(3307, () => {
+    console.log("Express rodando na rota 3307...")
 });
