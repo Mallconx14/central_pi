@@ -2,6 +2,11 @@ const express = require("express");
 const app = express();
 const mysql = require("./mysql");
 
+app.get("/pontuacao", async (req, res) => {
+    const result = await mysql.execute("SELECT * FROM pontuacao");
+    return res.status(200).json(result);
+});
+
 app.post("/pontuacao", async (req, res) => {
     const result = await mysql.execute(`
         INSERT INTO pontuacao (nome_pista, nome_equipe, total_voltas, tempo_ultima_volta, velocidade_media, posicao)
